@@ -1,0 +1,81 @@
+{% extends "todo_list_app/index.html" %}
+
+{% block content %}
+        <div class="text-vertical-center">
+            <h1>To Do list</h1>
+            <h3>Never Miss Again</h3>
+            <br>
+            <a href=" " id="login" onclick="login()" class="btn btn-dark btn-lg">Login</a>
+            <a href=" " id="signup" class="btn btn-dark btn-lg">Sign up</a>
+        </div>
+
+<div class="modal fade" id="loginform" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+
+
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+		&times;
+	</button>
+	<h4 class="modal-title">Edit Contract</h4>
+</div>
+<div class="modal-body no-padding">
+
+	<form action="" id="login-form" class="smart-form">
+
+		<fieldset>
+
+				<div class="row">
+				<section class="col col-6">
+					<label class="input">Quantity
+						<input type="text" name="quantity" placeholder="Quantity" id="quantity" ng-model="edit_quantity">
+						
+					</label>
+				</section>
+					<section class="col col-6">
+						<label class="input">Taxes
+							<input type="text" name="tax" id="tax" placeholder="Taxes:" ng-model="edit_tax">
+						</label>
+					</section>
+					</div>
+				<div class="row">
+					<section class="col col-6">
+						<label class="input">Total cost
+							<input type="text" name="total" id="total" placeholder="{{add}}" >
+						</label>
+					</section>
+				</div>
+			
+				
+			</fieldset>
+			<footer>
+				<button type="submit" class="btn btn-primary" ng-click = "editcontract(edit_id)">
+					Edit
+				</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					Cancel Contract
+				</button>
+			</footer>
+
+		</form>
+
+		
+</div>
+
+
+
+								</div>
+							</div>
+						</div>
+
+<script type="text/javascript">
+function login(){
+	document.getElementById("loginform").showModal();
+}
+
+</script>>
+
+
+
+{% endblock %}

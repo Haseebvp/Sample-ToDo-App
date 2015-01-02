@@ -1,0 +1,22 @@
+{% extends "todo_list_app/index.html" %}
+{% block content %}
+        <div class="text-vertical-center">
+            <h1>Your To Do list</h1>
+
+            {% for i in tasks %}
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+        {% if i.due_date < current_date %}
+            <h3 href="/item/">
+                <p>Title:<font size='5' color="blue">{{ i.name }}</font></p>
+
+            </h3>
+            {endif}
+            <p>Description:<font size='3'>{{ i.description }}</font></p>
+            <p>Priority:<font size='3'>{{ i.priorities }}</font></p>
+            <p>Status:<font size='3'>{{ i.status }}</font></p>
+            <p>Due date:<font size='3'>{{ i.due_date }}</font></p>
+            </div>
+{% endfor %}
+        </div>
+{% endblock %}
